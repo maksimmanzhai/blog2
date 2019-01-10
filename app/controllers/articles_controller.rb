@@ -20,6 +20,10 @@ class ArticlesController < ApplicationController
       render action: 'new'
     end
   end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
   
   private
 

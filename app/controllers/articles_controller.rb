@@ -35,7 +35,9 @@ class ArticlesController < ApplicationController
   end
 
   def delete
-    @article = Article.find(params[:id])
+    @article.delete
+    flash[:success] = "Article deleted"
+    redirect_to request.referrer || root_url
   end
 
   private

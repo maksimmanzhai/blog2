@@ -34,6 +34,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def delete
+    @article = Article.find(params[:id])
+  end
+
   private
 
   def article_params

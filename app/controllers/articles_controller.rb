@@ -34,10 +34,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def delete
-    @article.delete
-    flash[:success] = "Article deleted"
-    redirect_to request.referrer || root_url
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
   private

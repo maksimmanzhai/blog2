@@ -18,3 +18,20 @@
   </p>
   <% end %>
 </p>
+
+<p>
+  <% @article.comments.each do |comment| %>
+  <h2>
+    <%= comment.author %>
+  </h2>
+
+  <p>
+    <%= comment.body %>
+  </p>
+  
+  <h5>
+    <%= comment.created_at %>
+  </h5>
+<% end %>
+
+</p>

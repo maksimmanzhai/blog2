@@ -2,8 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1, h2, h3, h4 {
+h1 {
 	color: red;
 	font-family: 'Open Sans';
 	border-bottom: solid 2px black;
+}
+
+
+h2, h3, h4 {
+	color: blue;
+	font-family: 'Open Sans';
 }

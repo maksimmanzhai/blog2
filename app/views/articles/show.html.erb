@@ -1,37 +1,39 @@
-<h1><%= @article.title %></h1>
-<p>
-  <%= @article.text%>
-</p>
+<div id="centred">
+  <h1><%= @article.title %></h1>
+  <p>
+    <%= @article.text%>
+  </p>
 
-<p>
-  <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+    <%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    </p>
+     <p>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+    <% end %>
   </p>
-   <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
+
   <p>
-    <%= f.submit %>
-  </p>
+    <% @article.comments.each do |comment| %>
+    <h2>
+      <%= comment.author %>
+    </h2>
+
+    <p>
+      <%= comment.body %>
+    </p>
+    
+    <h5>
+      <%= comment.created_at %>
+    </h5>
   <% end %>
-</p>
 
-<p>
-  <% @article.comments.each do |comment| %>
-  <h2>
-    <%= comment.author %>
-  </h2>
-
-  <p>
-    <%= comment.body %>
   </p>
-  
-  <h5>
-    <%= comment.created_at %>
-  </h5>
-<% end %>
-
-</p>
+</div>

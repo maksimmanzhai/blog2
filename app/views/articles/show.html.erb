@@ -1,4 +1,5 @@
 <div id="centred">
+  <a href="/articles">Back</a>
   <h1><%= @article.title %></h1>
   <p>
     <%= @article.text%>
@@ -22,20 +23,17 @@
 
   <p>
     <% @article.comments.each do |comment| %>
-    <h2>
+    <h4>
       <i>
-        <%= comment.author %> said:
+        <%= comment.author %>
       </i>
-    </h2>
-
+    </h4>
     <p>
       <%= comment.body %>
     </p>
-    
     <h5>
       <%= comment.created_at %>
     </h5>
-  <% end %>
-
+    <% end %>
   </p>
 </div>

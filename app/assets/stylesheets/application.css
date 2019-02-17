@@ -11,18 +11,45 @@
  * It is generally better to create a new file per style scope.
  *
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-@import "bootstrap"
-
-.field_with_errors input {
-	border-color: red;
+body {
+	padding-top: 60px;
 }
 
-.field_with_errors textarea {
-	border-color: red;
+section {
+	overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
 }
 
 h1 {
-	color: violet;
-	border: 2px solid grey;
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.2em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: left;
+	color: #777;
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.7em;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.center h1 {
+	margin-bottom: 10px;
 }

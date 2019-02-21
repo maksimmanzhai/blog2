@@ -1,4 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
+require "spec_helper"
 
 describe Article do
   describe "validations" do
@@ -15,7 +16,15 @@ describe Article do
       article = create(:article, title: 'Lorem ipsum')
       expect(article.subject).to eq 'Lorem ipsum'
     end
-
   end
 
+  describe "#last_comment" do 
+    it "returns the last comment" do 
+      # create article with comments
+      article = create(:article_with_comments)
+
+      # test
+      expect(article.last_comment.body).to eq "comment body 3"
+    end
+  end
 end
